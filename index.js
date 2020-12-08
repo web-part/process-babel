@@ -1,9 +1,8 @@
 
-const babel = require('babel-core');
+const Babel = require('@babel/core');
 const MD5 = require('@definejs/md5');
 const File = require('@definejs/file');
 const Master = require('@webpart/master');
-
 const Comment = require('./modules/Comment');
 
 const dest$md5 = {};
@@ -29,12 +28,10 @@ module.exports = exports = {
     transform(content, opt) {
         let lines = Comment.get(content, opt);
 
-        let info = babel.transform(content, {
-            'presets': [
-                'es2015',
-            ],
-            'plugins': [],
-            'compact': false,
+        let info = Babel.transform(content, {
+            presets: ["@babel/preset-env"],
+            plugins: [],
+            compact: false,
         });
 
         content = info.code;

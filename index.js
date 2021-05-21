@@ -1,4 +1,5 @@
 
+const console = require('@webpart/console');
 const Babel = require('@babel/core');
 const MD5 = require('@definejs/md5');
 const File = require('@definejs/file');
@@ -6,7 +7,6 @@ const Master = require('@webpart/master');
 const Comment = require('./modules/Comment');
 
 const dest$md5 = {};
-
 
 
 function log(file) {

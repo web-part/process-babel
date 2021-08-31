@@ -1,6 +1,6 @@
 {
   "name": "@webpart/process-babel",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {},
@@ -19,6 +19,6 @@
     "@definejs/file": "^1.0.0",
     "@definejs/md5": "^1.0.0",
     "@webpart/console": "^2.0.2",
-    "@webpart/master": "^1.0.0"
+    "@webpart/master": "^2.1.2"
   }
 }

@@ -28,6 +28,8 @@ module.exports = exports = {
     transform(content, opt) {
         let lines = Comment.get(content, opt);
 
+        //此处提供静态的 require 语句以用于工具的分析。
+        /* require('@babel/preset-env'); */
         let info = Babel.transform(content, {
             presets: ["@babel/preset-env"],
             plugins: [],

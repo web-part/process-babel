@@ -1,6 +1,6 @@
 {
   "name": "@webpart/process-babel",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {},
@@ -19,6 +19,7 @@
     "@definejs/file": "^2.0.1",
     "@definejs/md5": "^2.0.0",
     "@webpart/console": "^2.1.1",
-    "@webpart/master": "^2.2.2"
+    "@webpart/master": "^2.2.2",
+    "babel-plugin-istanbul": "^6.1.1"
   }
 }

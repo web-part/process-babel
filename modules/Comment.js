@@ -8,19 +8,29 @@ module.exports = {
     * @returns {Array} 返回注释的行数组。
     *   content: '',    //必选。 要转码的 js 内容。
     *   opt = {
-    *       md5: '',    //可选。 要转码的 js 内容对应的 md5 值，如果不指定，则重新计算。
-    *       file: '',   //可选。 源文件路径。
-    *       list: [],   //可选。 多个源文件的列表。 如果指定了此字段，则忽略 file 字段。
+    *       comment: false,     //是否生成文件头的注释。
+    *       md5: '',            //可选。 要转码的 js 内容对应的 md5 值，如果不指定，则重新计算。
+    *       file: '',           //可选。 源文件路径。
+    *       list: [],           //可选。 多个源文件的列表。 如果指定了此字段，则忽略 file 字段。
     *   };
     */
     get(content, opt) {
-        if (!opt) {
+        if (!opt || !opt.comment) {
             return [];
         }
 
-        let md5 = opt.md5 || MD5.get(content);
-        let file = opt.file || '(none)';
-        let list = opt.list || [];
+
+        let { md5, file, list, } = opt;
+
+        //此时 md5 = { value: 'md5', ... };
+        if (typeof md5 == 'object') {
+            md5 = md5.value;
+        }
+
+
+        md5 = md5 || MD5.get(content);
+        file = file || '(none)';
+        list = list || [];
 
         //生成的格式如：
         //* source file: 3 files:
@@ -41,16 +51,13 @@ module.exports = {
         let lines = [
             '/*',
             '* babel time: ' + $Date.format(new Date(), 'yyyy-MM-dd HH:mm:ss'),
-            '*',
             '* source md5: ' + md5,
-            '*',
             '* source file: ' + file,
             '*/',
             '',
-            '',
         ];
 
-        return lines; 
+        return lines;
 
     },
 };

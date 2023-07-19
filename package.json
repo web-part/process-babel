@@ -1,7 +1,7 @@
 {
   "name": "@webpart/process-babel",
-  "version": "2.0.0",
-  "description": "",
+  "version": "2.0.1",
+  "description": "用于对 js 做 babel 转换的插件，以便生成 `.babel.js` 文件或渲染成相应的 html 内容。",
   "main": "index.js",
   "scripts": {},
   "keywords": [],
@@ -18,8 +18,8 @@
     "@definejs/date": "^1.1.0",
     "@definejs/file": "^2.0.1",
     "@definejs/md5": "^2.0.0",
-    "@webpart/console": "^2.1.1",
-    "@webpart/master": "^2.2.2",
+    "@webpart/console": "^3.0.2",
+    "@webpart/master": "^2.2.9",
     "babel-plugin-istanbul": "^6.1.1"
   }
 }
